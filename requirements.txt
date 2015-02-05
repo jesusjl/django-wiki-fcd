@@ -1,0 +1,13 @@
+Django==1.6.10
+Markdown==2.5.2
+Pillow==2.7.0
+South==1.0.2
+argparse==1.2.1
+django-classy-tags==0.6.1
+django-mptt==0.6.0
+django-nyt==0.9.6.post1
+django-sekizai==0.8.1
+six==1.9.0
+sorl-thumbnail==12.2
+wiki==0.0.24.2
+wsgiref==0.1.2
