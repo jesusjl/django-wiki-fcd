@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
+SITE_ID = 1
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
@@ -49,6 +50,16 @@ INSTALLED_APPS = (
 	'wiki.plugins.macros',
 )
 
+INSTALLED_APPS += ('south',)
+
+SOUTH_MIGRATION_MODULES = {
+    'django_nyt': 'django_nyt.south_migrations',
+    'wiki': 'wiki.south_migrations',
+    'images': 'wiki.plugins.images.south_migrations',
+    'notifications': 'wiki.plugins.notifications.south_migrations',
+    'attachments': 'wiki.plugins.attachments.south_migrations',
+}
+
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -67,6 +78,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 	"django.core.context_processors.request",
 	"django.core.context_processors.tz",
 	"django.contrib.messages.context_processors.messages",
+	"sekizai.context_processors.sekizai",
 )
 
 ROOT_URLCONF = 'wikifcd.urls'

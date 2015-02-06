@@ -10,3 +10,10 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
 )
+
+from wiki.urls import get_pattern as get_wiki_pattern
+from django_nyt.urls import get_pattern as get_nyt_pattern
+urlpatterns += patterns('',
+    (r'^notifications/', get_nyt_pattern()),
+    (r'', get_wiki_pattern())
+)
