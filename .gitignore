@@ -52,3 +52,4 @@ docs/_build/
 # Otros
 local_settings.py
 db.sqlite3
+/wiki/
